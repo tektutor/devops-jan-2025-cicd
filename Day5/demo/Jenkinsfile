@@ -18,21 +18,27 @@ pipeline {
         stage('Unit Test') {
             steps {
                 script {
-                    sh "mvn test"
+                     dir("Day5/demo") {
+                        sh "mvn test"
+                     }
                 }
             }
         }
         stage('package') {
             steps {
                 script {
-                    sh "mvn package"
+                    dir("Day5/demo") {
+                        sh "mvn package"
+                    }
                 }
             }
         }
         stage('Install') {
             steps {
                 script {
-                    sh "mvn install"
+                    dir("Day5/demo") {
+                        sh "mvn install"
+                    }
                 }
             }
         }
