@@ -9,7 +9,9 @@ pipeline {
         stage('Compile') {
             steps {
                 script {
-                    sh "mvn clean compile"
+                    dir("Day5/demo") {
+                        sh "mvn clean compile"
+                    }
                 }
             }
         }
