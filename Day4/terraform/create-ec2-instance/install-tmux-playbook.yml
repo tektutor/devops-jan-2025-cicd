@@ -1,0 +1,6 @@
+- name: Install tmux utility in aws ec2 instance provisioned by terraform
+  hosts: all
+  become: yes
+  tasks:
+     - name: Install tmux
+       apt: name=tmux state=latest update_cache=yes 
